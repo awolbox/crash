@@ -1,0 +1,56 @@
+# awolbox
+
+source "gpg -dq $HOME/.mpw.gpg |"
+set imap_check_subscribed
+set ssl_starttls = yes
+set ssl_force_tls = yes
+unset imap_passive
+unset record
+auto_view text/html
+
+set editor		= vim
+set sort		= 'reverse-date'
+set realname 		= 'awolbox'
+set imap_user 		= "awolbox@gmail.com"
+set imap_pass		= $my_pass
+set from 		= $imap_user
+set folder 		= "imaps://imap.gmail.com:993/"
+set smtp_url 		= "smtp://awolbox@smtp.gmail.com:587/"
+set spoolfile 		= +INBOX
+set postponed 		= +[Gmail]/Drafts
+set header_cache 	= "~/.config/mutt/cache/headers"
+set message_cachedir 	= "~/.config/mutt/cache/bodys"
+set certificate_file	= "~/.config/mutt/certificates"
+set mailcap_path	= ~/.config/mutt/mailcap
+set sendmail		= "/usr/bin/msmtp"
+set imap_keepalive 	= 200
+set mail_check 		= 120
+
+bind index g noop
+macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"
+macro index ga "<change-folder>=[Gmail]/All Mail<enter>" "Go to all mail"
+macro index gs "<change-folder>=[Gmail]/Sent Mail<enter>" "Go to sent mail"
+macro index gt "<change-folder>=[Gmail]/Trash<enter>" "Go to trash"
+macro index gd "<change-folder>=[Gmail]/Drafts<enter>" "Go to drafts"
+#macro pager \cb "<pipe-entry>'urlview'<enter>" 'Follow links with urlview'
+
+color hdrdefault cyan default
+color attachment yellow default
+color header brightyellow default "From: "
+color header brightyellow default "Subject: "
+color header brightyellow default "Date: "
+color quoted green default
+color quoted1 cyan default
+color quoted2 green default
+color quoted3 cyan default
+color error     red             default    
+color message   white           default     
+color indicator white           red          
+color status    white           blue          
+color tree      red             default        
+color search    white           blue            
+color markers   red             default         
+color index     yellow default  '~O'
+color index     yellow default  '~N'
+color index     brightred       default '~F'    
+color index     blue default    '~D'            

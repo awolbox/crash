@@ -1,0 +1,8 @@
+#!/bin/bash
+wp='autumn.png'
+kc='red'
+wal -i $HOME/.local/share/wallpapers/$wp \
+	-a "90" \
+	-o $HOME/.bin/qutebrowser_reload.py 1> /dev/null
+wal_steam -w 1> /dev/null
+alienfx -t $kc

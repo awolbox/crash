@@ -1,0 +1,284 @@
+; awolbox@Cr@$#
+
+[settings]
+throttle-output = 5
+throttle-output-for = 10
+throttle-input-for = 30
+screenchange-reload = false
+compositing-background = over
+compositing-foreground = over
+compositing-overline = over
+compositing-underline = over
+compositing-border = over
+
+[colors]
+background = ${xrdb:color0:#222}
+;background = #373737
+background-alt = #272727
+background-unf = #424242
+background-alrt = ${xrdb:color7:#222}
+foreground = ${xrdb:color7:#222}
+;foreground = #dfdfdf
+foreground-alt = #555
+primary = #36f900
+secondary = #0002ff
+alert = ${colors.foreground}
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+
+[bar/top]
+monitor = ${env:MONITOR:DP-1}
+width = 100%
+height = 30
+offset-x = 0%
+offset-y = 0%
+radius = 0
+fixed-center = true
+background = ${colors.background}
+foreground = ${colors.foreground}
+line-size = 0
+line-color = #f00
+border-size = 0
+border-color = #00000000
+padding-left = 1
+padding-right = 1
+module-margin-left = 2
+module-margin-right = 1
+font-0 = Terminus:size=13;1
+font-1 = FontAwesome:pixelsize=14:antialias=true;4
+font-2 = MaterialIcons:size=12:antialias=true;4
+modules-left = battery volume trash inbox weather
+modules-center = date
+modules-right = mpc mpd
+tray-position = right
+tray-padding = 1
+;tray-transparent = true
+;tray-background = #0063ff
+;wm-restack = i3
+;override-redirect = true
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+cursor-click = pointer
+cursor-scroll = ns-resize
+bottom = false
+
+[bar/bottom]
+monitor = ${env:MONITOR:DP-1}
+width = 100%
+height = 30
+offset-x = 0%
+offset-y = 0%
+radius = 0
+fixed-center = true
+background = ${colors.background}
+foreground = ${colors.foreground}
+line-size = 0
+line-color = #f00
+border-size = 0
+border-color = #00000000
+padding-left = 1
+padding-right = 1
+module-margin-left = 1
+module-margin-right = 1
+font-0 = Terminus:size=13;1
+font-1 = FontAwesome:pixelsize=14:antialias=true;4
+font-2 = MaterialIcons:size=13:antialias=true;4
+modules-left = cpu wired wireless
+modules-center = i3
+modules-right = ctemp gtemp
+;tray-position = left
+;tray-padding = 2
+;tray-transparent = true
+;tray-background = #0063ff
+;wm-restack = i3
+;override-redirect = true
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+cursor-click = pointer
+cursor-scroll = ns-resize
+bottom = true
+
+[module/i3]
+type = internal/i3
+strip-wsnumbers = true
+label-mode = %mode%
+label-mode-padding = 4
+label-mode-background = ${colors.foreground}
+label-mode-foreground = ${colors.background}
+label-focused = %icon%
+label-focused-foreground = ${colors.background}
+label-focused-background = ${colors.foreground}
+;label-focused-underline = #fba922
+label-focused-padding = 4
+label-unfocused = %icon%
+label-unfocused-background = ${colors.background}
+label-unfocused-padding = 4
+label-visible = %icon%
+label-visible-underline = #555555
+label-visible-padding = 4
+label-urgent = %index%
+label-urgent-foreground = ${colors.background}
+label-urgent-background = ${colors.foreground}
+label-urgent-padding = 4
+ws-icon-0 = "0;"
+ws-icon-1 = "1; "
+ws-icon-2 = "2; "
+ws-icon-3 = "3; "
+ws-icon-4 = "4; "
+ws-icon-5 = "5; "
+ws-icon-6 = "6; "
+ws-icon-7 = "7; "
+ws-icon-8 = "8; "
+ws-icon-9 = "9; "
+
+[module/date]
+type = internal/date
+interval = 1.0
+date = %A-%B-%d
+time =  (%I:%M)
+label = " %date%  %time% "
+label-font = 2
+label-foreground = ${colors.foreground}
+
+[module/mpc]
+type = custom/script
+exec = ~/.config/polybar/mpd_current.sh
+tail = true
+label-foreground = ${colors.foreground}
+
+[module/mpd]
+type = internal/mpd
+format-online = "  <icon-prev> <icon-stop> <toggle> <icon-next> "
+format-online-backround = ${colors.backround-alt}
+format-offline = 
+format-offline-backround = ${colors.backround}
+icon-prev = 
+icon-stop = 
+icon-play = 
+icon-pause = 
+icon-next = 
+label-song-maxlen = 25
+label-song-ellipsis = true
+
+[module/volume]
+type = internal/volume
+format-volume = <ramp-volume> <label-volume>
+format-muted <label-muted>
+label-volume = %percentage%
+label-muted = 
+label-muted-foreground = ${colors.foreground}
+ramp-volume-0 =  
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+[module/weather]
+type = custom/script
+exec = ~/.config/polybar/IconicWeather.sh 43055
+interval = 180
+
+[module/wireless]
+type = internal/network
+interface = wlp13s0
+interval = 3.0
+accumulate-stats = true
+format-connected = "(<ramp-signal>)(<label-connected>)"
+label-connected = "%local_ip%" 
+ramp-signal-0 = 😱
+ramp-signal-1 = 😠
+ramp-signal-2 = 😒
+ramp-signal-3 = 😊
+ramp-signal-4 = 😃
+ramp-signal-5 = 😈
+
+[module/wired]
+type = internal/network
+interface = enp7s0
+interval = 3.0
+accumulate-stats = true
+format-connected = <label-connected>
+label-connected =  [%linkspeed%]
+
+[module/battery]
+type = internal/battery
+battery = BAT1
+adapter = ACAD
+poll-interval = 5
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+label-charging = %percentage%%
+label-discharging = %percentage%%
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 750
+
+#[module/temperature]
+#type = internal/temperature
+#interval = 0.5
+#thermal-zone = 0
+#hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input
+#warn-temperature = 90
+#format = <ramp> <label>
+#format-warn = <ramp> <label-warn>
+#label = %temperature-c%
+#label-warn = %temperature-c%
+#label-warn-foreground = #f00
+#ramp-0 = 
+#ramp-1 = 
+#ramp-2 = 
+
+[module/cpu]
+type = internal/cpu
+interval = 0.5
+format = <label> |<ramp-coreload>|
+label =  [%percentage%%]
+ramp-coreload-0 = ▁
+ramp-coreload-1 = ▂
+ramp-coreload-2 = ▃
+ramp-coreload-3 = ▄
+ramp-coreload-4 = ▅
+ramp-coreload-5 = ▆
+ramp-coreload-6 = ▇
+ramp-coreload-7 = █
+
+[module/ctemp]
+type = custom/script
+exec = echo " [ C | $(~/.config/polybar/temp-percore.sh) ]"
+interval = 0.5
+exec-if = sensors
+
+[module/gtemp]
+type = custom/script
+exec = echo "[ G |$(~/.config/polybar/gpu_temp.sh) ]"
+interval = 0.5
+
+[module/trash]
+interval = 1
+type = custom/script
+exec = ~/.config/polybar/trash.sh
+format-prefix = " "
+click-right = rm -rf ~/.local/share/Trash/files/*
+click-left = pcmanfm ~/.local/share/Trash/files
+
+[module/inbox]
+type = custom/script
+exec = ~/.config/polybar/inbox.sh
+format-prefix = " "
+interval = 60
+
+[module/mnts]
+type = custom/script
+exec = ~/.config/polybar/usb-mount.sh
+;format-prefix = ""
+interval = 3
+
+

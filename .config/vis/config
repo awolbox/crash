@@ -1,0 +1,17 @@
+audio.sources=pulse
+audio.stereo.enabled=false
+colors.override.terminal=false
+colors.scheme=colors
+visualizer.scaling.multiplier=2.0
+visualizer.spectrum.smoothing.mode=monstercat
+visualizer.monstercat.smoothing.factor=2.0
+#visualizer.spectrum.smoothing.mode=sgs
+#visualizer.sgs.smoothing.passes=4
+#visualizer.sgs.smoothing.points=7
+visualizer.spectrum.top.margin=0.30
+visualizer.spectrum.bottom.margin=0.0
+visualizer.spectrum.right.margin=0.0
+visualizer.spectrum.left.margin=0.0
+visualizer.spectrum.bar.width=2
+visualizer.spectrum.bar.spacing=1
+visualizer.spectrum.falloff.mode=fill
