@@ -1,6 +1,6 @@
-# Rice
-ArchLinux+zsh+i3wm setup with nvidia graphics and pulseaudio sound server on an alienware m17x r3 laptop
-## Dependencies
+# archlinux + zsh + i3wm
+nvidia - pulseaudio - alienware m17xr3
+## dependencies
 
  - official repos
 
