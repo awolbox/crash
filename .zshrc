@@ -28,6 +28,7 @@ export HISTFILE=$HOME/.zshh
 export HISTSIZE=5000
 export SAVEHIST=10000
 export BROWSER='waterfox'
+export QT_QPA_PLATFORMTHEME=qt5ct
 export RANGER_LOAD_DEFAULT_RC=FALSE
 export COLORFGBG="default;default"
 export LESS='-R '
@@ -154,8 +155,8 @@ alias nf='neofetch --w3m $HOME/.local/share/icons/Alienware-Logo.png --size 30% 
 alias news='newsboat -r'
 alias packer='/usr/bin/packer'
 #alias pass='PASSWORD_STORE_ENABLE_EXTENSIONS=true pass'
-alias o='cd && clear && ~/bin/bashc.sh'
-alias oo='nf && ~/bin/bashc.sh'
+alias o='cd && clear && bashc'
+alias oo='nf && bashc'
 alias trash-e='rm -r $HOME/.local/share/Trash/files/*'
 alias trash-l='ls -lah --color=auto $HOME/.local/share/Trash/files/*'
 alias archwiki='w3m -no-cookies -graph https://wiki.archlinux.org/'

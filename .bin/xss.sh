@@ -2,5 +2,5 @@
 
 xset s off &
 xset -dpms &
-xscreensaver &
+xscreensaver -no-splash &
 xss-lock -- xscreensaver-command -lock
