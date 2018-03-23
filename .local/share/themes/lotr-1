@@ -1,5 +1,8 @@
 #!/bin/bash
-wp='lotr-braddur.png'
+
+source $HOME/.bashrc
+
+wp='lotr-baraddur.png'
 kc='orange'
 wal -i $HOME/.local/share/wallpapers/$wp \
 	-a "90" \

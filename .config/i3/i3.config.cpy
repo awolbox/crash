@@ -149,7 +149,7 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 ##~~~~~~ POWER MENU ~~~~~~## 
 
 ## screenlocker
-set $Locker xscreensaver-command -lock
+set $Locker xlock +description +timeelapse -mode lament -fg orange -user " " -info " " && sleep 1 &
 # menu config
 set $mode_system  [l]ock - [L]ogout - [s]uspend - [h]ibernate - [r]eboot - [S]hutdown 
 mode "$mode_system" {
@@ -193,7 +193,7 @@ bindsym XF86Launch1 exec --no-startup-id alienfx-gtk
 
 ##~~~~~~ STARTUP ~~~~~~~~~##
 
-exec --no-startup-id $HOME/.bin/xss.sh
+exec --no-startup-id $HOME/.bin/xss.sh	
 exec --no-startup-id /usr/bin/compton -f --xrender-sync --xrender-sync-fence
 exec --no-startup-id /usr/bin/blueman-applet
 exec --no-startup-id /usr/bin/nvidia-settings --load-config-only 

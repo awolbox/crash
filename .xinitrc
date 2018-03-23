@@ -1,9 +1,8 @@
-# awolbox
 #!/bin/sh
 
 [ -f /etc/xprofile ] && . /etc/xprofile
 [ -f ~/.xprofile ] && . ~/.xprofile
-[ ! -s ~/.config/mpd/pid ] && mpd
+[ ! -s ~/.config/mpd/pid ] && mpd $HOME/.config/mpd/config
 
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
