@@ -12,9 +12,8 @@ if [[ "${BLOCK_BUTTON}" -eq 1 ]]; then
  # Right click
 elif [[ "${BLOCK_BUTTON}" -eq 3 ]]; then
   # Delete all files permanently (unlink them)
-  rm -r "${TRASH_DIRECTORY}/files"
-  rm -r "${TRASH_DIRECTORY}/info"
-  #exec paplay ~/.sounds/freedesktop/stereo/trash-empty.oga
+  rm -rf "${TRASH_DIRECTORY}/files"
+  rm -rf "${TRASH_DIRECTORY}/info"
   # Create new directory
   mkdir "${TRASH_DIRECTORY}/files"
   mkdir "${TRASH_DIRECTORY}/info"
