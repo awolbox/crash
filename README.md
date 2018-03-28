@@ -1,5 +1,5 @@
 # GNU/Linux Rice
-archlinux - bash - i3 + polybar/
+archlinux - bash - i3 + polybar\
 nvidia graphics - pulseaudio sound server
 
 ## dependencies
