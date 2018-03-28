@@ -1,3 +1,8 @@
+! ~/.Xresources - awolbox@crash
+
+#define xsc2 #0c0a09
+#define xsc1 #CB3B16
+
 !! URxvt !!
 URxvt.perl-ext-common: resize-font
 URxvt*foreground:   {foreground}
@@ -5,12 +10,10 @@ URxvt*background:   {background.alpha}
 Urxvt*depth:32
 URxvt*cursorColor:  {cursor}
 URxvt*borderColor:  {background.alpha}
-!URxvt.font: xft:Hack:antialias=true:size=9
 URxvt.font: xft:Hack:antialias=true:Bold:style:Italic:size=9
-!URxvt.font: xft:DejaVu Sans Mono:style=Book:antialias=true:size=9, xft:Hack:antialias=true:size=9
 URxvt.letterSpace: -1
-URxvt.resize-font.smaller: C-j
-URxvt.resize-font.bigger: C-k
+URxvt.resize-font.smaller: C-Prior
+URxvt.resize-font.bigger: C-Next
 URxvt*cursorBlink: true
 URxvt*scrollBar: false
 URxvt*scrollTtyOutput: false
@@ -26,13 +29,46 @@ XClock*hourColor:   rgba:{color15.xrgba}
 XClock*minuteColor: rgba:{color15.xrgba}
 XClock*secondColor: rgba:{color15.xrgba}
 
-!! Rofi !!
+!! Xscreensaver !!
+xscreensaver.splash: true
+!font
+!xcreensaver.Dialog.headingFont:        -*-hack-bold-r-*-*-12-*-*-*-*-*-*-*
+!xscreensaver.Dialog.bodyFont:           -*-hack-medium-r-*-*-12-*-*-*-*-*-*-*
+!xscreensaver.Dialog.labelFont:          -*-hack-medium-r-*-*-12-*-*-*-*-*-*-*
+!xscreensaver.Dialog.unameFont:          -*-hack-medium-r-*-*-12-*-*-*-*-*-*-*
+!xscreensaver.Dialog.buttonFont:         -*-hack-bold-r-*-*-12-*-*-*-*-*-*-*
+!xscreensaver.Dialog.dateFont:           -*-hack-medium-r-*-*-12-*-*-*-*-*-*-*
+!xscreensaver.passwd.passwdFont:         -*-hack-bold-r-*-*-12-*-*-*-*-*-*-*
+xscreensaver.passwd.body.label:
+xscreensaver.passwd.heading.label:
+xscreensaver.passwd.login.label:
+!general dialog box (affects main hostname, username, password text)
+xscreensaver.Dialog.foreground: xsc1
+xscreensaver.Dialog.background: xsc2
+xscreensaver.Dialog.topShadowColor: xsc1
+xscreensaver.Dialog.bottomShadowColor: xsc1
+xscreensaver.Dialog.Button.foreground: xsc1
+xscreensaver.Dialog.Button.background: xsc2
+!username/password input box and date text colour
+xscreensaver.Dialog.text.foreground: xsc1
+xscreensaver.Dialog.text.background: xsc2
+xscreensaver.Dialog.internalBorderWidth: 0
+xscreensaver.Dialog.borderWidth:         0
+xscreensaver.Dialog.shadowThickness:2
+!timeout bar (background is actually determined by Dialog.text.background)
+xscreensaver.passwd.thermometer.foreground: xsc1
+xscreensaver.passwd.thermometer.background: xsc2
+xscreensaver.passwd.thermometer.width:       8
+!datestamp format--see the strftime(3) manual page for details
+xscreensaver.dateFormat:    %I:%M%P %a %b %d, %Y
+
+!! rofi !!
 rofi.color-window: {background}, {background}, {color10}
 rofi.color-normal: {background}, {foreground}, {background}, {color10}, {background}
 rofi.color-active: {background}, {foreground}, {background}, {color10}, {background}
 rofi.color-urgent: {background}, {color9}, {background}, {color9}, {foreground}
 
-!! Colors !!
+!! colors !!
 *.color0: {color0}
 *color0:  {color0}
 *.color1: {color1}

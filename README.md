@@ -1,5 +1,7 @@
-# archlinux + zsh + i3wm
-nvidia - pulseaudio - alienware m17xr3
+# GNU/Linux Rice
+archlinux - bash - i3 + polybar
+nvidia graphics - pulseaudio sound server
+
 ## dependencies
 
  - official repos

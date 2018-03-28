@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/bin/env sh
+
 wp='easter.png'
 kc='yellow'
 wal -i $HOME/.local/share/wallpapers/$wp \

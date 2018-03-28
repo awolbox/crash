@@ -12,12 +12,14 @@ compositing-underline = over
 compositing-border = over
 
 [colors]
-background = ${xrdb:color0:#222}
+background = ${xrdb:color0}
+;#222}
 ;background = #373737
 background-alt = #272727
 background-unf = #424242
-background-alrt = ${xrdb:color7:#222}
-foreground = ${xrdb:color7:#222}
+background-alrt = ${xrdb:color7}
+;:#222}
+foreground = ${xrdb:color11:#222}
 ;foreground = #dfdfdf
 foreground-alt = #555
 primary = #36f900

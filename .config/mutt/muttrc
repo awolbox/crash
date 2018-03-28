@@ -1,6 +1,6 @@
 # awolbox
 
-source "gpg -dq $HOME/.mpw.gpg |"
+source "gpg -dq $HOME/.mutt.gpg |"
 set imap_check_subscribed
 set ssl_starttls = yes
 set ssl_force_tls = yes

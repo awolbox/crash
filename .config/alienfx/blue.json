@@ -7,14 +7,14 @@
             ],
             "loop": [
                 {
+                    "type": "fixed",
                     "colours": [
                         [
                             0,
                             0,
                             15
                         ]
-                    ],
-                    "type": "fixed"
+                    ]
                 }
             ]
         },
@@ -24,14 +24,14 @@
             ],
             "loop": [
                 {
+                    "type": "fixed",
                     "colours": [
                         [
                             0,
                             0,
                             15
                         ]
-                    ],
-                    "type": "fixed"
+                    ]
                 }
             ]
         },
@@ -41,14 +41,14 @@
             ],
             "loop": [
                 {
+                    "type": "fixed",
                     "colours": [
                         [
                             0,
                             0,
                             15
                         ]
-                    ],
-                    "type": "fixed"
+                    ]
                 }
             ]
         },
@@ -58,14 +58,14 @@
             ],
             "loop": [
                 {
+                    "type": "fixed",
                     "colours": [
                         [
                             0,
                             0,
                             15
                         ]
-                    ],
-                    "type": "fixed"
+                    ]
                 }
             ]
         },
@@ -76,14 +76,14 @@
             ],
             "loop": [
                 {
+                    "type": "fixed",
                     "colours": [
                         [
                             0,
                             0,
                             15
                         ]
-                    ],
-                    "type": "fixed"
+                    ]
                 }
             ]
         },
@@ -93,14 +93,14 @@
             ],
             "loop": [
                 {
+                    "type": "fixed",
                     "colours": [
                         [
                             0,
                             0,
                             15
                         ]
-                    ],
-                    "type": "fixed"
+                    ]
                 }
             ]
         },
@@ -110,14 +110,14 @@
             ],
             "loop": [
                 {
+                    "type": "fixed",
                     "colours": [
                         [
                             0,
                             0,
-                            0
+                            15
                         ]
-                    ],
-                    "type": "fixed"
+                    ]
                 }
             ]
         },
@@ -127,14 +127,14 @@
             ],
             "loop": [
                 {
+                    "type": "fixed",
                     "colours": [
                         [
                             0,
                             0,
                             15
                         ]
-                    ],
-                    "type": "fixed"
+                    ]
                 }
             ]
         },
@@ -144,119 +144,14 @@
             ],
             "loop": [
                 {
+                    "type": "fixed",
                     "colours": [
                         [
                             0,
                             0,
                             15
                         ]
-                    ],
-                    "type": "fixed"
-                }
-            ]
-        }
-    ],
-    "AC Charged": [
-        {
-            "zones": [
-                "Power Button",
-                "HDD LEDs"
-            ],
-            "loop": [
-                {
-                    "colours": [
-                        [
-                            0,
-                            0,
-                            15
-                        ]
-                    ],
-                    "type": "fixed"
-                }
-            ]
-        }
-    ],
-    "Battery Critical": [
-        {
-            "zones": [
-                "Power Button",
-                "HDD LEDs"
-            ],
-            "loop": [
-                {
-                    "colours": [
-                        [
-                            15,
-                            0,
-                            0
-                        ]
-                    ],
-                    "type": "fixed"
-                }
-            ]
-        }
-    ],
-    "Battery Sleep": [
-        {
-            "zones": [
-                "Power Button",
-                "HDD LEDs"
-            ],
-            "loop": [
-                {
-                    "colours": [
-                        [
-                            15,
-                            9,
-                            0
-                        ],
-                        [
-                            0,
-                            0,
-                            0
-                        ]
-                    ],
-                    "type": "morph"
-                },
-                {
-                    "colours": [
-                        [
-                            0,
-                            0,
-                            0
-                        ],
-                        [
-                            15,
-                            9,
-                            0
-                        ]
-                    ],
-                    "type": "morph"
-                }
-            ]
-        },
-        {
-            "zones": [
-                "Left Keyboard",
-                "Middle-left Keyboard",
-                "Middle-right Keyboard",
-                "Right Keyboard",
-                "Right Speaker",
-                "Left Speaker",
-                "Logo",
-                "Touchpad",
-                "Media Bar"
-            ],
-            "loop": [
-                {
-                    "colours": [
-                        [
-                            0,
-                            0,
-                            0
-                        ]
-                    ],
-                    "type": "fixed"
+                    ]
                 }
             ]
         }
@@ -269,6 +164,7 @@
             ],
             "loop": [
                 {
+                    "type": "morph",
                     "colours": [
                         [
                             0,
@@ -280,10 +176,10 @@
                             0,
                             0
                         ]
-                    ],
-                    "type": "morph"
+                    ]
                 },
                 {
+                    "type": "morph",
                     "colours": [
                         [
                             0,
@@ -295,8 +191,7 @@
                             0,
                             15
                         ]
-                    ],
-                    "type": "morph"
+                    ]
                 }
             ]
         },
@@ -314,19 +209,19 @@
             ],
             "loop": [
                 {
+                    "type": "fixed",
                     "colours": [
                         [
                             0,
                             0,
                             0
                         ]
-                    ],
-                    "type": "fixed"
+                    ]
                 }
             ]
         }
     ],
-    "Battery On": [
+    "AC Charged": [
         {
             "zones": [
                 "Power Button",
@@ -334,19 +229,14 @@
             ],
             "loop": [
                 {
+                    "type": "fixed",
                     "colours": [
                         [
                             0,
-                            9,
-                            14
-                        ],
-                        [
                             0,
-                            0,
-                            0
+                            15
                         ]
-                    ],
-                    "type": "fixed"
+                    ]
                 }
             ]
         }
@@ -359,6 +249,7 @@
             ],
             "loop": [
                 {
+                    "type": "morph",
                     "colours": [
                         [
                             0,
@@ -366,27 +257,131 @@
                             15
                         ],
                         [
-                            0,
+                            15,
                             9,
-                            14
+                            0
                         ]
-                    ],
-                    "type": "morph"
+                    ]
                 },
                 {
+                    "type": "morph",
                     "colours": [
                         [
-                            0,
+                            15,
                             9,
-                            14
+                            0
                         ],
                         [
                             0,
                             0,
                             15
                         ]
-                    ],
-                    "type": "morph"
+                    ]
+                }
+            ]
+        }
+    ],
+    "Battery Sleep": [
+        {
+            "zones": [
+                "Power Button",
+                "HDD LEDs"
+            ],
+            "loop": [
+                {
+                    "type": "morph",
+                    "colours": [
+                        [
+                            15,
+                            9,
+                            0
+                        ],
+                        [
+                            0,
+                            0,
+                            0
+                        ]
+                    ]
+                },
+                {
+                    "type": "morph",
+                    "colours": [
+                        [
+                            0,
+                            0,
+                            0
+                        ],
+                        [
+                            15,
+                            9,
+                            0
+                        ]
+                    ]
+                }
+            ]
+        },
+        {
+            "zones": [
+                "Left Keyboard",
+                "Middle-left Keyboard",
+                "Middle-right Keyboard",
+                "Right Keyboard",
+                "Right Speaker",
+                "Left Speaker",
+                "Logo",
+                "Touchpad",
+                "Media Bar"
+            ],
+            "loop": [
+                {
+                    "type": "fixed",
+                    "colours": [
+                        [
+                            0,
+                            0,
+                            0
+                        ]
+                    ]
+                }
+            ]
+        }
+    ],
+    "Battery On": [
+        {
+            "zones": [
+                "Power Button",
+                "HDD LEDs"
+            ],
+            "loop": [
+                {
+                    "type": "fixed",
+                    "colours": [
+                        [
+                            0,
+                            0,
+                            15
+                        ]
+                    ]
+                }
+            ]
+        }
+    ],
+    "Battery Critical": [
+        {
+            "zones": [
+                "Power Button",
+                "HDD LEDs"
+            ],
+            "loop": [
+                {
+                    "type": "blink",
+                    "colours": [
+                        [
+                            15,
+                            0,
+                            0
+                        ]
+                    ]
                 }
             ]
         }

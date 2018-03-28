@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/bin/env sh
+
 wp='winter-1.png'
 kc='cyan'
 wal -i $HOME/.local/share/wallpapers/$wp \

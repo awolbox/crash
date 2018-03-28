@@ -1,4 +1,8 @@
-emulate sh -c 'source /etc/profile'
+#
+# ~/.bash_profile - awolbox@crash
+#
+[[ -f ~/.bashrc ]] && . ~/.bashrc
+
 if [ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ]; then
 	  exec startx
 fi

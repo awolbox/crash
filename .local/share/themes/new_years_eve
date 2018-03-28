@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/bin/env sh
+
 wp='relax.png'
 kc='red'
 wal -i $HOME/.local/share/wallpapers/$wp \

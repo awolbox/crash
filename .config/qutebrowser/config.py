@@ -19,11 +19,11 @@ for k, v in dict_attrs(yaml_data):
 
 # misc
 c.aliases = {'w': 'session-save', 'q': 'quit', 'wq': 'quit --save'}
-c.colors.webpage.bg = '#282A2E'
+#c.colors.webpage.bg = '#282A2E'
 c.qt.args = ['ppapi-widevine-path=/usr/lib/qt/plugins/ppapi/libwidevinecdmadapter.so']
 c.content.webgl = False
 #c.spellcheck.languages = [en-US]
-c.url.start_pages = 'https://duckduckgo.com/?kae=t&kaj=u&k1=-1&kap=-1&kao=-1&kax=-1&kak=-1&kaq=-1'
+c.url.start_pages = 'https://duckduckgo.com/?key=d4eecf26f40cdb2635f4e1c8e7aa1cb07eac53a87260909edc4f9ceaf32a7303b3ca00c6cb55f43e3e493a4b859d261a63810ff4b879acc628c239675ccb96a2'
 c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}', 'aw': 'https://wiki.archlinux.org/?search={}'}
 
 # fonts
@@ -50,4 +50,6 @@ c.tabs.padding = {'top': 2, 'bottom': 2, 'left': 5, 'right': 5}
 c.tabs.select_on_remove = 'next'
 c.tabs.title.alignment = 'left'
 c.tabs.title.format = '{title}'
-
+#css = '~/.config/qutebrowser/stylesheets/new.css' 
+#c.content.user_stylesheets = [ '~/.config/qutebrowser/stylesheets/new.css' ]
+config.bind(',n', 'config-cycle content.user_stylesheets ~/.config/qutebrowser/stylesheets/global-dark.css "" ;; reload')

@@ -1,3 +1,6 @@
+#
+# ~/.xprofile - awolbox
+#
 if test -d ~/.xprofile.d/; then
         for xprofile in ~/.xprofile.d/*.sh; do
                 test -r "$xprofile" && . "$xprofile"

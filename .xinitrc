@@ -1,4 +1,8 @@
-#!/bin/sh
+#!/bin/env sh
+
+#
+# ~/.xinitrc -  awolbox@crash
+#
 
 [ -f /etc/xprofile ] && . /etc/xprofile
 [ -f ~/.xprofile ] && . ~/.xprofile
