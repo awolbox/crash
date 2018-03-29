@@ -51,7 +51,7 @@ module-margin-right = 1
 font-0 = Terminus:size=13;1
 font-1 = FontAwesome:pixelsize=14:antialias=true;4
 font-2 = MaterialIcons:size=12:antialias=true;4
-modules-left = battery volume trash inbox weather
+modules-left = battery volume  trash inbox weather
 modules-center = date
 modules-right = mpc mpd
 tray-position = right
@@ -283,4 +283,11 @@ exec = ~/.config/polybar/usb-mount.sh
 ;format-prefix = ""
 interval = 3
 
-
+[module/pulsed]
+type = custom/script
+exec = ~/.config/polybar/pulse-tail.sh
+tail = true
+click-right = exec pavucontrol &
+click-left = ~/polybar-scripts/pulseaudio-tail.sh --mute
+scroll-up = ~/polybar-scripts/pulseaudio-tail.sh --up
+scroll-down = ~/polybar-scripts/pulseaudio-tail.sh --down

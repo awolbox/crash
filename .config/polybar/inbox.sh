@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/bin/env sh
+
 key(){
 	gpg -dq $HOME/.inbox.gpg
 };server(){

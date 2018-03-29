@@ -35,3 +35,4 @@ fi
 
 exec i3 
 ~/.fehbg &
+~/.bin/qtpd &
