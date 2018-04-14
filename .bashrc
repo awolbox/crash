@@ -27,7 +27,7 @@ source ~/.bash_functions
 source ~/.bash_aliases
 source ~/.gitprompt
 
-PS1='$(__git_ps1 "(git)-{\e[32m%s\e[0m}-")> '
+PS1='$(__git_ps1 "(git)-[\e[32m%s\e[0m]")\$ '
 
 set -o vi
 (cat ~/.cache/wal/sequences &)

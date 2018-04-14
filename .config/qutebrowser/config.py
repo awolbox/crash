@@ -1,4 +1,3 @@
-
 import yaml
 
 with (config.configdir / 'colors.yml').open() as f:
@@ -41,15 +40,17 @@ c.fonts.tabs = '8pt "DejaVu Sans Mono"'
 c.fonts.monospace = '"xos4 Terminus", Terminus, Monospace, "DejaVu Sans Mono", Monaco, "Bitstream Vera Sans Mono", "Andale Mono", "Courier New", Courier, "Liberation Mono", monospace, Fixed, Consolas, Terminal'
 
 # status bar
-c.statusbar.padding = {'top': 1, 'bottom': 1, 'left': 0, 'right': 0}
+c.statusbar.padding = {'top': 5, 'bottom': 5, 'left': 5, 'right': 5}
 
 # tabs
 c.tabs.favicons.scale = 1.0
-c.tabs.indicator.padding = {'top': 4, 'bottom': 4, 'left': 0, 'right': 4}
-c.tabs.padding = {'top': 2, 'bottom': 2, 'left': 5, 'right': 5}
+c.tabs.indicator.padding = {'top': 0, 'bottom': 0, 'left': 0, 'right': 5}
+c.tabs.indicator.width = 0
+c.tabs.padding = {'top': 5, 'bottom': 5, 'left': 5, 'right': 5}
 c.tabs.select_on_remove = 'next'
-c.tabs.title.alignment = 'left'
+c.tabs.title.alignment = 'center'
 c.tabs.title.format = '{title}'
 #css = '~/.config/qutebrowser/stylesheets/new.css' 
 #c.content.user_stylesheets = [ '~/.config/qutebrowser/stylesheets/new.css' ]
 config.bind(',n', 'config-cycle content.user_stylesheets ~/.config/qutebrowser/stylesheets/global-dark.css "" ;; reload')
+

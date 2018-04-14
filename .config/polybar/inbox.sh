@@ -1,4 +1,7 @@
-#!/bin/env sh
+#!/usr/bin/env sh
+
+notification=('y')
+notification_sound=(~/.local/share/notification/Navi_-_Hey_Listen.mp3)
 
 key(){
 	gpg -dq $HOME/.inbox.gpg
@@ -9,13 +12,37 @@ key(){
 };pass(){
 	key | grep "!" | cut -d "!" -f 2 -s
 };inbox(){
-	curl -sf -u `echo $(user)`:`echo $(pass)` \
-		-X "STATUS INBOX (UNSEEN)" \
-		imaps://`echo $(server)`/INBOX | \
+	curl -sf -u `echo $(user)`:`echo $(pass)` 	\
+		-X "STATUS INBOX (UNSEEN)" 				\
+		imaps://`echo $(server)`/INBOX | 		\
 		tr -d -c "[:digit:]"
 }
-if [ `inbox` ] && [ `inbox` -gt 0 ]; then
-    echo `inbox`
+
+if [ $notification == "y" ] || [ $notification == "Y" ];
+then
+	if [ `inbox` ] && [ `inbox` -gt 0 ];
+	then
+		 if [ -f /tmp/notification.inbox ];
+	 	then	 
+	   		echo `inbox`
+	 	else
+	    	mpv $notification_sound
+			touch /tmp/notification.inbox
+			echo `inbox`
+		fi
+	elif [ -f /tmp/notifications.inbox ];
+	then
+		rm /tmp/notification.inbox
+		echo ""
+	else
+		echo ""
+	fi
 else
-    echo ""
+	if [ `inbox` ] && [ `inbox` -gt 0 ];
+	then
+	   	echo `inbox`
+	else
+		echo ""
+	fi
 fi
+

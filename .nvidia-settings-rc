@@ -1,8 +1,8 @@
 #
-# ~/.nvidia-settings-rc - awolbox@crash
+# /home/awolbox/.nvidia-settings-rc
 #
 # Configuration file for nvidia-settings - the NVIDIA X Server Settings utility
-# Generated on Sun Feb  4 10:25:45 2018
+# Generated on Fri Mar 30 15:58:12 2018
 #
 
 # ConfigProperties:
@@ -13,9 +13,9 @@ SliderTextEntries = Yes
 IncludeDisplayNameInConfigFile = No
 ShowQuitDialog = Yes
 UpdateRulesOnProfileNameChange = Yes
-Timer = PowerMizer_Monitor_(GPU_0),Yes,1000
-Timer = Thermal_Monitor_(GPU_0),Yes,1000
 Timer = Memory_Used_(GPU_0),Yes,3000
+Timer = Thermal_Monitor_(GPU_0),Yes,1000
+Timer = PowerMizer_Monitor_(GPU_0),Yes,1000
 
 # Attributes:
 
@@ -39,9 +39,19 @@ Timer = Memory_Used_(GPU_0),Yes,3000
 [DPY:LVDS-0]/ColorSpace=0
 [DPY:LVDS-0]/ColorRange=0
 [DPY:LVDS-0]/SynchronousPaletteUpdates=0
+[DPY:HDMI-0]/RedBrightness=0.000000
+[DPY:HDMI-0]/GreenBrightness=0.000000
+[DPY:HDMI-0]/BlueBrightness=0.000000
+[DPY:HDMI-0]/RedContrast=0.000000
+[DPY:HDMI-0]/GreenContrast=0.000000
+[DPY:HDMI-0]/BlueContrast=0.000000
+[DPY:HDMI-0]/RedGamma=1.000000
+[DPY:HDMI-0]/GreenGamma=1.000000
+[DPY:HDMI-0]/BlueGamma=1.000000
 [DPY:HDMI-0]/Dithering=0
 [DPY:HDMI-0]/DitheringMode=0
 [DPY:HDMI-0]/DitheringDepth=0
+[DPY:HDMI-0]/DigitalVibrance=0
 [DPY:HDMI-0]/ColorSpace=0
 [DPY:HDMI-0]/ColorRange=0
 [DPY:HDMI-0]/SynchronousPaletteUpdates=0

@@ -8,23 +8,23 @@ unset imap_passive
 unset record
 auto_view text/html
 
-set editor		= vim
-set sort		= 'reverse-date'
-set realname 		= 'awolbox'
-set imap_user 		= "awolbox@gmail.com"
-set imap_pass		= $my_pass
-set from 		= $imap_user
-set folder 		= "imaps://imap.gmail.com:993/"
-set smtp_url 		= "smtp://awolbox@smtp.gmail.com:587/"
-set spoolfile 		= +INBOX
-set postponed 		= +[Gmail]/Drafts
-set header_cache 	= "~/.config/mutt/cache/headers"
-set message_cachedir 	= "~/.config/mutt/cache/bodys"
-set certificate_file	= "~/.config/mutt/certificates"
-set mailcap_path	= ~/.config/mutt/mailcap
-set sendmail		= "/usr/bin/msmtp"
-set imap_keepalive 	= 200
-set mail_check 		= 120
+set editor				= 	vim
+set sort				= 	'reverse-date'
+set realname 			= 	'awolbox'
+set imap_user 			= 	"awolbox@gmail.com"
+set imap_pass			= 	$my_pass
+set from 				= 	$imap_user
+set folder 				= 	"imaps://imap.gmail.com:993/"
+set smtp_url 			= 	"smtps://$imap_user:$my_pass@smtp.gmail.com:465"
+set spoolfile 			= 	+INBOX
+set postponed 			= 	+[Gmail]/Drafts
+set header_cache 		= 	"~/.config/mutt/cache/headers"
+set message_cachedir 	= 	"~/.config/mutt/cache/bodys"
+set certificate_file	= 	"~/.config/mutt/certificates"
+set mailcap_path		= 	~/.config/mutt/mailcap
+set sendmail			= 	"/usr/bin/ssmtp"
+set imap_keepalive 		= 	200
+set mail_check 			= 	120
 
 bind index g noop
 macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"

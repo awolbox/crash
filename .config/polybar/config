@@ -51,8 +51,8 @@ module-margin-right = 1
 font-0 = Terminus:size=13;1
 font-1 = FontAwesome:pixelsize=14:antialias=true;4
 font-2 = MaterialIcons:size=12:antialias=true;4
-modules-left = battery volume  trash inbox weather
-modules-center = date
+modules-left = battery volume  trash inbox hint-chess weather
+modules-center = mydate
 modules-right = mpc mpd
 tray-position = right
 tray-padding = 1
@@ -135,12 +135,10 @@ ws-icon-7 = "7; "
 ws-icon-8 = "8; "
 ws-icon-9 = "9; "
 
-[module/date]
-type = internal/date
+[module/mydate]
+type = custom/script
+exec = bash -c echo -e "`date +'%A (\e[32m%I:%M\e[0m) %B-%d'`"
 interval = 1.0
-date = %A-%B-%d
-time =  (%I:%M)
-label = " %date%  %time% "
 label-font = 2
 label-foreground = ${colors.foreground}
 
@@ -291,3 +289,17 @@ click-right = exec pavucontrol &
 click-left = ~/polybar-scripts/pulseaudio-tail.sh --mute
 scroll-up = ~/polybar-scripts/pulseaudio-tail.sh --up
 scroll-down = ~/polybar-scripts/pulseaudio-tail.sh --down
+
+[module/system-usb-udev]
+type = custom/script
+exec = ~/.config/polybar/system-usb-udev.sh
+tail = true
+click-left = ~/.config/polybar/system-usb-udev.sh --mount
+click-right = ~/.config/polybar/system-usb-udev.sh --unmount
+
+
+[module/hint-chess]
+type = custom/script
+exec = ~/.config/polybar/hint-chess/hint-chess.sh
+interval = 10
+click-left = xdg-open https://www.chess.com/goto_ready_game & disown

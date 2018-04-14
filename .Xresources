@@ -1,7 +1,8 @@
 ! ~/.Xresources - awolbox@crash
 
 #define xsc2 #0c0a09
-#define xsc1 #CB3B16
+#define xsc1 blue
+!#define xsc1 #CB3B16
 
 !! URxvt !!
 URxvt.perl-ext-common: resize-font
@@ -32,13 +33,13 @@ XClock*secondColor: rgba:{color15.xrgba}
 !! Xscreensaver !!
 xscreensaver.splash: true
 !font
-!xcreensaver.Dialog.headingFont:        -*-hack-bold-r-*-*-12-*-*-*-*-*-*-*
-!xscreensaver.Dialog.bodyFont:           -*-hack-medium-r-*-*-12-*-*-*-*-*-*-*
-!xscreensaver.Dialog.labelFont:          -*-hack-medium-r-*-*-12-*-*-*-*-*-*-*
-!xscreensaver.Dialog.unameFont:          -*-hack-medium-r-*-*-12-*-*-*-*-*-*-*
-!xscreensaver.Dialog.buttonFont:         -*-hack-bold-r-*-*-12-*-*-*-*-*-*-*
-!xscreensaver.Dialog.dateFont:           -*-hack-medium-r-*-*-12-*-*-*-*-*-*-*
-!xscreensaver.passwd.passwdFont:         -*-hack-bold-r-*-*-12-*-*-*-*-*-*-*
+xcreensaver.Dialog.headingFont:        -*-hack-bold-r-*-*-12-*-*-*-*-*-*-*
+xscreensaver.Dialog.bodyFont:           -*-hack-medium-r-*-*-12-*-*-*-*-*-*-*
+xscreensaver.Dialog.labelFont:          -*-hack-medium-r-*-*-12-*-*-*-*-*-*-*
+xscreensaver.Dialog.unameFont:          -*-hack-medium-r-*-*-12-*-*-*-*-*-*-*
+xscreensaver.Dialog.buttonFont:         -*-hack-bold-r-*-*-12-*-*-*-*-*-*-*
+xscreensaver.Dialog.dateFont:           -*-hack-medium-r-*-*-12-*-*-*-*-*-*-*
+xscreensaver.passwd.passwdFont:         -*-hack-bold-r-*-*-12-*-*-*-*-*-*-*
 xscreensaver.passwd.body.label:
 xscreensaver.passwd.heading.label:
 xscreensaver.passwd.login.label:
