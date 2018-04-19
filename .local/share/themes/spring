@@ -3,9 +3,6 @@
 wp='spring.png'
 kc='blue'
 
-sed -i 's/!#define\ xsc1\ blue/#define\ xcs1\ blue/' ~/.Xresources
-sed -i 's/#define\ xsc1\ #CB3B16/!#define\ xcs1\ #CB3B16/' ~/.Xresources
-xrdb -merge ~/.Xresources
 wal -i $HOME/.local/share/wallpapers/$wp \
 	-a "90" \
 	-o $HOME/.bin/qutebrowser_reload.py 1> /dev/null

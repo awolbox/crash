@@ -11,9 +11,9 @@ if [[ -f ~/Workspace/video/cam.mkv ]]
 		do
 			o=$((0+1))
 		done
-		filename=$HOME/Workspace/video/cam_$o.mkv
+		filename=$HOME/Workspace/studio/video/out//cam_$o.mkv
 	else
-		filename=$HOME/Workspace/video/cam.mkv
+		filename=$HOME/Workspace/studio/video/out/cam.mkv
 fi
 
 ffmpeg -y \
