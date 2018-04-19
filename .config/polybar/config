@@ -13,17 +13,14 @@ compositing-border = over
 
 [colors]
 background = ${xrdb:color0}
-;#222}
 ;background = #373737
-background-alt = #272727
-background-unf = #424242
+;background-alt = #272727
+;background-unf = #424242
 background-alrt = ${xrdb:color7}
-;:#222}
 foreground = ${xrdb:color11:#222}
-;foreground = #dfdfdf
-foreground-alt = #555
-primary = #36f900
-secondary = #0002ff
+foreground-alt = ${xrdb:color13}
+;primary = #36f900
+;secondary = #0002ff
 alert = ${colors.foreground}
 
 [global/wm]
@@ -46,13 +43,15 @@ border-size = 0
 border-color = #00000000
 padding-left = 1
 padding-right = 1
+padding-center = 0
 module-margin-left = 2
 module-margin-right = 1
+module-margin-center = 1
 font-0 = Terminus:size=13;1
 font-1 = FontAwesome:pixelsize=14:antialias=true;4
 font-2 = MaterialIcons:size=12:antialias=true;4
 modules-left = battery volume  trash inbox hint-chess weather
-modules-center = mydate
+modules-center = mydate0 mydate1 mydate2
 modules-right = mpc mpd
 tray-position = right
 tray-padding = 1
@@ -135,9 +134,23 @@ ws-icon-7 = "7; "
 ws-icon-8 = "8; "
 ws-icon-9 = "9; "
 
-[module/mydate]
+[module/mydate0]
 type = custom/script
-exec = bash -c echo -e "`date +'%A (\e[32m%I:%M\e[0m) %B-%d'`"
+exec = ~/.config/polybar/mydate0.sh
+interval = 1.0
+label-font = 2
+label-foreground = ${colors.foreground}
+
+[module/mydate1]
+type = custom/script
+exec = ~/.config/polybar/mydate1.sh
+interval = 1.0
+label-font = 2
+label-foreground = ${colors.foreground-alt}
+
+[module/mydate2]
+type = custom/script
+exec = ~/.config/polybar/mydate2.sh
 interval = 1.0
 label-font = 2
 label-foreground = ${colors.foreground}
@@ -274,12 +287,6 @@ type = custom/script
 exec = ~/.config/polybar/inbox.sh
 format-prefix = " "
 interval = 60
-
-[module/mnts]
-type = custom/script
-exec = ~/.config/polybar/usb-mount.sh
-;format-prefix = ""
-interval = 3
 
 [module/pulsed]
 type = custom/script

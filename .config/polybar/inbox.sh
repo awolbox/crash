@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
-notification=('y')
-notification_sound=(~/.local/share/notification/Navi_-_Hey_Listen.mp3)
+notification='n'
+notification_sound=~/.local/share/notification/Navi_-_Hey_Listen.mp3
 
 key(){
 	gpg -dq $HOME/.inbox.gpg
