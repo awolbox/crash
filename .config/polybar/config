@@ -50,7 +50,7 @@ module-margin-center = 1
 font-0 = Terminus:size=13;1
 font-1 = FontAwesome:pixelsize=14:antialias=true;4
 font-2 = MaterialIcons:size=12:antialias=true;4
-modules-left = battery volume  trash inbox hint-chess weather
+modules-left = battery volume trash inbox weather
 modules-center = mydate0 mydate1 mydate2
 modules-right = mpc mpd
 tray-position = right
@@ -101,38 +101,58 @@ cursor-click = pointer
 cursor-scroll = ns-resize
 bottom = true
 
-[module/i3]
-type = internal/i3
-strip-wsnumbers = true
-label-mode = %mode%
-label-mode-padding = 4
-label-mode-background = ${colors.foreground}
-label-mode-foreground = ${colors.background}
-label-focused = %icon%
-label-focused-foreground = ${colors.background}
-label-focused-background = ${colors.foreground}
-;label-focused-underline = #fba922
-label-focused-padding = 4
-label-unfocused = %icon%
-label-unfocused-background = ${colors.background}
-label-unfocused-padding = 4
-label-visible = %icon%
-label-visible-underline = #555555
-label-visible-padding = 4
-label-urgent = %index%
-label-urgent-foreground = ${colors.background}
-label-urgent-background = ${colors.foreground}
-label-urgent-padding = 4
-ws-icon-0 = "0;"
-ws-icon-1 = "1; "
-ws-icon-2 = "2; "
-ws-icon-3 = "3; "
-ws-icon-4 = "4; "
-ws-icon-5 = "5; "
-ws-icon-6 = "6; "
-ws-icon-7 = "7; "
-ws-icon-8 = "8; "
-ws-icon-9 = "9; "
+;;	MODULES/TOP
+
+[module/battery]
+type = internal/battery
+battery = BAT1
+adapter = ACAD
+poll-interval = 5
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+label-charging = %percentage%%
+label-discharging = %percentage%%
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 750
+
+[module/volume]
+type = internal/volume
+format-volume = <ramp-volume> <label-volume>
+format-muted <label-muted>
+label-volume = %percentage%
+label-muted = 
+label-muted-foreground = ${colors.foreground}
+ramp-volume-0 =  
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+[module/trash]
+interval = 1
+type = custom/script
+exec = ~/.config/polybar/trash.sh
+format-prefix = " "
+click-right = rm -rf ~/.local/share/Trash/files/*
+click-left = pcmanfm ~/.local/share/Trash/files
+
+[module/inbox]
+type = custom/script
+exec = ~/.config/polybar/inbox.sh
+format-prefix = " "
+interval = 60
+
+[module/weather]
+type = custom/script
+exec = ~/.config/polybar/IconicWeather.sh 43055
+interval = 180
 
 [module/mydate0]
 type = custom/script
@@ -175,21 +195,21 @@ icon-next = 
 label-song-maxlen = 25
 label-song-ellipsis = true
 
-[module/volume]
-type = internal/volume
-format-volume = <ramp-volume> <label-volume>
-format-muted <label-muted>
-label-volume = %percentage%
-label-muted = 
-label-muted-foreground = ${colors.foreground}
-ramp-volume-0 =  
-ramp-volume-1 = 
-ramp-volume-2 = 
+;; MODULES/BOTTOM
 
-[module/weather]
-type = custom/script
-exec = ~/.config/polybar/IconicWeather.sh 43055
-interval = 180
+[module/cpu]
+type = internal/cpu
+interval = 0.5
+format = <label> |<ramp-coreload>|
+label =  [%percentage%%]
+ramp-coreload-0 = ▁
+ramp-coreload-1 = ▂
+ramp-coreload-2 = ▃
+ramp-coreload-3 = ▄
+ramp-coreload-4 = ▅
+ramp-coreload-5 = ▆
+ramp-coreload-6 = ▇
+ramp-coreload-7 = █
 
 [module/wireless]
 type = internal/network
@@ -213,55 +233,38 @@ accumulate-stats = true
 format-connected = <label-connected>
 label-connected =  [%linkspeed%]
 
-[module/battery]
-type = internal/battery
-battery = BAT1
-adapter = ACAD
-poll-interval = 5
-format-charging = <animation-charging> <label-charging>
-format-discharging = <ramp-capacity> <label-discharging>
-label-charging = %percentage%%
-label-discharging = %percentage%%
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
-animation-charging-framerate = 750
-
-#[module/temperature]
-#type = internal/temperature
-#interval = 0.5
-#thermal-zone = 0
-#hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input
-#warn-temperature = 90
-#format = <ramp> <label>
-#format-warn = <ramp> <label-warn>
-#label = %temperature-c%
-#label-warn = %temperature-c%
-#label-warn-foreground = #f00
-#ramp-0 = 
-#ramp-1 = 
-#ramp-2 = 
-
-[module/cpu]
-type = internal/cpu
-interval = 0.5
-format = <label> |<ramp-coreload>|
-label =  [%percentage%%]
-ramp-coreload-0 = ▁
-ramp-coreload-1 = ▂
-ramp-coreload-2 = ▃
-ramp-coreload-3 = ▄
-ramp-coreload-4 = ▅
-ramp-coreload-5 = ▆
-ramp-coreload-6 = ▇
-ramp-coreload-7 = █
+[module/i3]
+type = internal/i3
+strip-wsnumbers = true
+label-mode = %mode%
+label-mode-padding = 4
+label-mode-background = ${colors.foreground}
+label-mode-foreground = ${colors.background}
+label-focused = %icon%
+label-focused-foreground = ${colors.background}
+label-focused-background = ${colors.foreground}
+;label-focused-underline = #fba922
+label-focused-padding = 4
+label-unfocused = %icon%
+label-unfocused-background = ${colors.background}
+label-unfocused-padding = 4
+label-visible = %icon%
+label-visible-underline = #555555
+label-visible-padding = 4
+label-urgent = %index%
+label-urgent-foreground = ${colors.background}
+label-urgent-background = ${colors.foreground}
+label-urgent-padding = 4
+ws-icon-0 = "0;"
+ws-icon-1 = "1; "
+ws-icon-2 = "2; "
+ws-icon-3 = "3; "
+ws-icon-4 = "4; "
+ws-icon-5 = "5; "
+ws-icon-6 = "6; "
+ws-icon-7 = "7; "
+ws-icon-8 = "8; "
+ws-icon-9 = "9; "
 
 [module/ctemp]
 type = custom/script
@@ -274,39 +277,4 @@ type = custom/script
 exec = echo "[ G |$(~/.config/polybar/gpu_temp.sh) ]"
 interval = 0.5
 
-[module/trash]
-interval = 1
-type = custom/script
-exec = ~/.config/polybar/trash.sh
-format-prefix = " "
-click-right = rm -rf ~/.local/share/Trash/files/*
-click-left = pcmanfm ~/.local/share/Trash/files
 
-[module/inbox]
-type = custom/script
-exec = ~/.config/polybar/inbox.sh
-format-prefix = " "
-interval = 60
-
-[module/pulsed]
-type = custom/script
-exec = ~/.config/polybar/pulse-tail.sh
-tail = true
-click-right = exec pavucontrol &
-click-left = ~/polybar-scripts/pulseaudio-tail.sh --mute
-scroll-up = ~/polybar-scripts/pulseaudio-tail.sh --up
-scroll-down = ~/polybar-scripts/pulseaudio-tail.sh --down
-
-[module/system-usb-udev]
-type = custom/script
-exec = ~/.config/polybar/system-usb-udev.sh
-tail = true
-click-left = ~/.config/polybar/system-usb-udev.sh --mount
-click-right = ~/.config/polybar/system-usb-udev.sh --unmount
-
-
-[module/hint-chess]
-type = custom/script
-exec = ~/.config/polybar/hint-chess/hint-chess.sh
-interval = 10
-click-left = xdg-open https://www.chess.com/goto_ready_game & disown

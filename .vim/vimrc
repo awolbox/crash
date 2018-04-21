@@ -8,15 +8,11 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 "Plugin 'tpope/vim-fugitive'
 "Plugin 'git://git.wincent.com/command-t.git'
-"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/syntastic'
-"Plugin 'flazz/vim-colorschemes'
-"Plugin 'edkolev/tmuxline.vim'
-"Plugin 'easymotion/vim-easymotion'
 Plugin 'mboughaba/i3config.vim'
 Plugin 'dylanaraps/wal.vim'
 Plugin 'mhinz/vim-startify'
@@ -34,8 +30,7 @@ set relativenumber
 set number
 set background=dark
 map <C-n> :NERDTreeToggle<CR>
-"au BufWinLeave * mkview
-"au BufWinEnter * silent loadview
+
 let NERDTreeShowLineNumbers=1
 "autocmd vimenter * NERDTree
 
@@ -50,5 +45,5 @@ let g:syntastic_check_on_wq = 0
 
  """ Theme  """
 colorscheme wal
-"let g:airline_theme = 'murmur'
+"let g:airline_theme = ''
 let airline_powerline_fonts = 1
