@@ -1,8 +1,8 @@
 ! ~/.Xresources - awolbox@crash
 
 #define xsc2 #0c0a09
-#define xsc1 blue
-!#define xsc1 #CB3B16
+!#define xcs1 blue
+#define xcs1 #CB3B16
 
 !! URxvt !!
 URxvt.perl-ext-common: resize-font
@@ -44,21 +44,21 @@ xscreensaver.passwd.body.label:
 xscreensaver.passwd.heading.label:
 xscreensaver.passwd.login.label:
 !general dialog box (affects main hostname, username, password text)
-xscreensaver.Dialog.foreground: xsc1
-xscreensaver.Dialog.background: xsc2
-xscreensaver.Dialog.topShadowColor: xsc1
-xscreensaver.Dialog.bottomShadowColor: xsc1
-xscreensaver.Dialog.Button.foreground: xsc1
-xscreensaver.Dialog.Button.background: xsc2
+xscreensaver.Dialog.foreground: #CB3B16
+xscreensaver.Dialog.background: #0c0a09
+xscreensaver.Dialog.topShadowColor: #CB3B16
+xscreensaver.Dialog.bottomShadowColor: #CB3B16
+xscreensaver.Dialog.Button.foreground: #CB3B16
+xscreensaver.Dialog.Button.background: #0c0a09
 !username/password input box and date text colour
-xscreensaver.Dialog.text.foreground: xsc1
-xscreensaver.Dialog.text.background: xsc2
+xscreensaver.Dialog.text.foreground: #CB3B16
+xscreensaver.Dialog.text.background: #0c0a09
 xscreensaver.Dialog.internalBorderWidth: 0
 xscreensaver.Dialog.borderWidth:         0
 xscreensaver.Dialog.shadowThickness:2
 !timeout bar (background is actually determined by Dialog.text.background)
-xscreensaver.passwd.thermometer.foreground: xsc1
-xscreensaver.passwd.thermometer.background: xsc2
+xscreensaver.passwd.thermometer.foreground: #CB3B16
+xscreensaver.passwd.thermometer.background: #0c0a09
 xscreensaver.passwd.thermometer.width:       8
 !datestamp format--see the strftime(3) manual page for details
 xscreensaver.dateFormat:    %I:%M%P %a %b %d, %Y

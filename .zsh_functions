@@ -1,0 +1,72 @@
+# ~/.zsh_functions - awolbox@crash
+
+cless(){
+ LESSOPEN='| source-highlight --failsafe --out-format=esc256 -o STDOUT -i %s 2>/dev/null ' less -R "$@"
+}
+
+man() {
+		LESS_TERMCAP_md=$'\e[01;31m' \
+    	LESS_TERMCAP_me=$'\e[0m' \
+	    LESS_TERMCAP_se=$'\e[0m' \
+	    LESS_TERMCAP_so=$'\e[01;44;33m' \
+	    LESS_TERMCAP_ue=$'\e[0m' \
+	    LESS_TERMCAP_us=$'\e[01;32m' \
+	    command man "$@"
+}
+
+o()
+{
+		clear &&
+
+		f=3; b=4
+		bld=$'\e[1m'
+		rst=$'\e[0m'
+
+		echo -e "\
+ 
+		;  \e[${f}1m  ▀▄   ▄▀     \e[${f}2m ▄▄▄████▄▄▄    \e[${f}3m  ▄██▄     \e[${f}4m  ▀▄   ▄▀     \e[${f}5m ▄▄▄████▄▄▄    \e[${f}6m  ▄██▄  $rst
+		;  \e[${f}1m ▄█▀███▀█▄    \e[${f}2m███▀▀██▀▀███   \e[${f}3m▄█▀██▀█▄   \e[${f}4m ▄█▀███▀█▄    \e[${f}5m███▀▀██▀▀███   \e[${f}6m▄█▀██▀█▄$rst
+		;  \e[${f}1m█▀███████▀█   \e[${f}2m▀▀███▀▀███▀▀   \e[${f}3m▀█▀██▀█▀   \e[${f}4m█▀███████▀█   \e[${f}5m▀▀███▀▀███▀▀   \e[${f}6m▀█▀██▀█▀$rst
+		;  \e[${f}1m▀ ▀▄▄ ▄▄▀ ▀   \e[${f}2m ▀█▄ ▀▀ ▄█▀    \e[${f}3m▀▄    ▄▀   \e[${f}4m▀ ▀▄▄ ▄▄▀ ▀   \e[${f}5m ▀█▄ ▀▀ ▄█▀    \e[${f}6m▀▄    ▄▀$rst
+		;
+		;  $bld\e[${f}1m▄ ▀▄   ▄▀ ▄   \e[${f}2m ▄▄▄████▄▄▄    \e[${f}3m  ▄██▄     \e[${f}4m▄ ▀▄   ▄▀ ▄   \e[${f}5m ▄▄▄████▄▄▄    \e[${f}6m  ▄██▄  $rst
+		;  $bld\e[${f}1m█▄█▀███▀█▄█   \e[${f}2m███▀▀██▀▀███   \e[${f}3m▄█▀██▀█▄   \e[${f}4m█▄█▀███▀█▄█   \e[${f}5m███▀▀██▀▀███   \e[${f}6m▄█▀██▀█▄$rst
+		;  $bld\e[${f}1m▀█████████▀   \e[${f}2m▀▀▀██▀▀██▀▀▀   \e[${f}3m▀▀█▀▀█▀▀   \e[${f}4m▀█████████▀   \e[${f}5m▀▀▀██▀▀██▀▀▀   \e[${f}6m▀▀█▀▀█▀▀$rst
+		;  $bld\e[${f}1m ▄▀     ▀▄    \e[${f}2m▄▄▀▀ ▀▀ ▀▀▄▄   \e[${f}3m▄▀▄▀▀▄▀▄   \e[${f}4m ▄▀     ▀▄    \e[${f}5m▄▄▀▀ ▀▀ ▀▀▄▄   \e[${f}6m▄▀▄▀▀▄▀▄$rst
+		;
+		;
+		;                                     \e[${f}7m▌$rst
+ 		;
+		;                                    \e[${f}7m▌$rst
+		;
+		;                               \e[${f}7m    ▄█▄    $rst
+		;                               \e[${f}7m▄█████████▄$rst
+		;                               \e[${f}7m▀▀▀▀▀▀▀▀▀▀▀$rst
+		" | cut -d ";" -f 2
+}
+
+oo(){
+	neofetch --w3m \
+		"$HOME/.local/share/icons/Alienware(C)-Logo.png" \
+		--size 30% --crop_mode normal --crop_offset center
+}
+
+test-colors(){
+	x=`tput op`
+	y=`printf %76s`
+	for i in {0..256};
+	do
+		o=00$i
+		echo -e ${o:${#o}-3:3} `tput setaf $i;tput setab $i`${y// /=}$x
+	done
+}
+
+td(){
+	if [[ -f ./TODO ]];
+	then
+		clear && cat TODO
+	else
+		vim TODO
+	fi
+}
+
