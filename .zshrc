@@ -1,6 +1,4 @@
-#
 # ~/.zshrc - awolbox@crash
-#
 
 [[ $- != *i* ]] && return
 if [ "$TERM" = "linux" ]; then
@@ -22,6 +20,7 @@ export HISTFILE=$HOME/.zsh_history
 export PAGER='less -R'
 export QT_QPA_PLATFORMTHEME=qt5ct
 export RANGER_LOAD_DEFAULT_RC=FALSE
+export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 
 source ~/.zsh_functions
 source ~/.zsh_aliases

@@ -1,4 +1,5 @@
 #!/bin/env sh
+#
 # ~/.xinitrc -  awolbox@crash
 
 userresources=$HOME/.Xresources
@@ -20,6 +21,14 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 	done
 	unset f;
 }
+
+[ ! -s ~/.config/mpd/pid ] && mpd
+
+urxvtd --quiet --opendisplay --fork &
+xset -dpms &
+xset s off &
+xss-lock -- xscreensaver-command -lock &
+
 exec i3
 ~/.fehbg & 
 

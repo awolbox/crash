@@ -1,19 +1,10 @@
 #!/bin/sh
-
 #
 # ~/.xprofile - awolbox
-#
-
-#if test -d ~/.xprofile.d/; then
-#        for xprofile in ~/.xprofile.d/*.sh; do
-#                test -r "$xprofile" && . "$xprofile"
-#        done
-#        unset xprofile
-#fi
 
 [ ! -s ~/.config/mpd/pid ] && mpd
 urxvtd --quiet --opendisplay --fork &
 xset -dpms &
 xset s off &
-xsslock - xscreensaver-command -lock &
+xss-lock -- xscreensaver-command -lock &
 
