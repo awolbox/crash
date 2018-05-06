@@ -1,10 +1,14 @@
 # ~/.zsh_functions - awolbox@crash
 
-cless(){
- LESSOPEN='| source-highlight --failsafe --out-format=esc256 -o STDOUT -i %s 2>/dev/null ' less -R "$@"
+# Colorize 'less' with 'les'
+les()
+{
+		LESSOPEN='| source-highlight --failsafe --out-format=esc256 -o STDOUT -i %s 2>/dev/null ' less -R "$@"
 }
 
-man() {
+# Mask 'man' to accept color options
+man()
+{
 		LESS_TERMCAP_md=$'\e[01;31m' \
     	LESS_TERMCAP_me=$'\e[0m' \
 	    LESS_TERMCAP_se=$'\e[0m' \
@@ -19,54 +23,67 @@ o()
 		clear &&
 
 		f=3; b=4
-		bld=$'\e[1m'
-		rst=$'\e[0m'
+		bold=$'\e[1m'
+		reset=$'\e[0m'
 
 		echo -e "\
  
-		;  \e[${f}1m  ▀▄   ▄▀     \e[${f}2m ▄▄▄████▄▄▄    \e[${f}3m  ▄██▄     \e[${f}4m  ▀▄   ▄▀     \e[${f}5m ▄▄▄████▄▄▄    \e[${f}6m  ▄██▄  $rst
-		;  \e[${f}1m ▄█▀███▀█▄    \e[${f}2m███▀▀██▀▀███   \e[${f}3m▄█▀██▀█▄   \e[${f}4m ▄█▀███▀█▄    \e[${f}5m███▀▀██▀▀███   \e[${f}6m▄█▀██▀█▄$rst
-		;  \e[${f}1m█▀███████▀█   \e[${f}2m▀▀███▀▀███▀▀   \e[${f}3m▀█▀██▀█▀   \e[${f}4m█▀███████▀█   \e[${f}5m▀▀███▀▀███▀▀   \e[${f}6m▀█▀██▀█▀$rst
-		;  \e[${f}1m▀ ▀▄▄ ▄▄▀ ▀   \e[${f}2m ▀█▄ ▀▀ ▄█▀    \e[${f}3m▀▄    ▄▀   \e[${f}4m▀ ▀▄▄ ▄▄▀ ▀   \e[${f}5m ▀█▄ ▀▀ ▄█▀    \e[${f}6m▀▄    ▄▀$rst
+		;  \e[${f}1m  ▀▄   ▄▀     \e[${f}2m ▄▄▄████▄▄▄    \e[${f}3m  ▄██▄     \e[${f}4m  ▀▄   ▄▀     \e[${f}5m ▄▄▄████▄▄▄    \e[${f}6m  ▄██▄  ${reset}
+		;  \e[${f}1m ▄█▀███▀█▄    \e[${f}2m███▀▀██▀▀███   \e[${f}3m▄█▀██▀█▄   \e[${f}4m ▄█▀███▀█▄    \e[${f}5m███▀▀██▀▀███   \e[${f}6m▄█▀██▀█▄${reset}
+		;  \e[${f}1m█▀███████▀█   \e[${f}2m▀▀███▀▀███▀▀   \e[${f}3m▀█▀██▀█▀   \e[${f}4m█▀███████▀█   \e[${f}5m▀▀███▀▀███▀▀   \e[${f}6m▀█▀██▀█▀${reset}
+		;  \e[${f}1m▀ ▀▄▄ ▄▄▀ ▀   \e[${f}2m ▀█▄ ▀▀ ▄█▀    \e[${f}3m▀▄    ▄▀   \e[${f}4m▀ ▀▄▄ ▄▄▀ ▀   \e[${f}5m ▀█▄ ▀▀ ▄█▀    \e[${f}6m▀▄    ▄▀${reset}
 		;
-		;  $bld\e[${f}1m▄ ▀▄   ▄▀ ▄   \e[${f}2m ▄▄▄████▄▄▄    \e[${f}3m  ▄██▄     \e[${f}4m▄ ▀▄   ▄▀ ▄   \e[${f}5m ▄▄▄████▄▄▄    \e[${f}6m  ▄██▄  $rst
-		;  $bld\e[${f}1m█▄█▀███▀█▄█   \e[${f}2m███▀▀██▀▀███   \e[${f}3m▄█▀██▀█▄   \e[${f}4m█▄█▀███▀█▄█   \e[${f}5m███▀▀██▀▀███   \e[${f}6m▄█▀██▀█▄$rst
-		;  $bld\e[${f}1m▀█████████▀   \e[${f}2m▀▀▀██▀▀██▀▀▀   \e[${f}3m▀▀█▀▀█▀▀   \e[${f}4m▀█████████▀   \e[${f}5m▀▀▀██▀▀██▀▀▀   \e[${f}6m▀▀█▀▀█▀▀$rst
-		;  $bld\e[${f}1m ▄▀     ▀▄    \e[${f}2m▄▄▀▀ ▀▀ ▀▀▄▄   \e[${f}3m▄▀▄▀▀▄▀▄   \e[${f}4m ▄▀     ▀▄    \e[${f}5m▄▄▀▀ ▀▀ ▀▀▄▄   \e[${f}6m▄▀▄▀▀▄▀▄$rst
+		;  ${bold}\e[${f}1m▄ ▀▄   ▄▀ ▄   \e[${f}2m ▄▄▄████▄▄▄    \e[${f}3m  ▄██▄     \e[${f}4m▄ ▀▄   ▄▀ ▄   \e[${f}5m ▄▄▄████▄▄▄    \e[${f}6m  ▄██▄  ${reset}
+		;  ${bold}\e[${f}1m█▄█▀███▀█▄█   \e[${f}2m███▀▀██▀▀███   \e[${f}3m▄█▀██▀█▄   \e[${f}4m█▄█▀███▀█▄█   \e[${f}5m███▀▀██▀▀███   \e[${f}6m▄█▀██▀█▄${reset}
+		;  ${bold}\e[${f}1m▀█████████▀   \e[${f}2m▀▀▀██▀▀██▀▀▀   \e[${f}3m▀▀█▀▀█▀▀   \e[${f}4m▀█████████▀   \e[${f}5m▀▀▀██▀▀██▀▀▀   \e[${f}6m▀▀█▀▀█▀▀${reset}
+		;  ${bold}\e[${f}1m ▄▀     ▀▄    \e[${f}2m▄▄▀▀ ▀▀ ▀▀▄▄   \e[${f}3m▄▀▄▀▀▄▀▄   \e[${f}4m ▄▀     ▀▄    \e[${f}5m▄▄▀▀ ▀▀ ▀▀▄▄   \e[${f}6m▄▀▄▀▀▄▀▄${reset}
 		;
 		;
-		;                                     \e[${f}7m▌$rst
+		;                                     \e[${f}7m▌${reset}
  		;
-		;                                    \e[${f}7m▌$rst
+		;                                    \e[${f}7m▌${reset}
 		;
-		;                               \e[${f}7m    ▄█▄    $rst
-		;                               \e[${f}7m▄█████████▄$rst
-		;                               \e[${f}7m▀▀▀▀▀▀▀▀▀▀▀$rst
+		;                               \e[${f}7m    ▄█▄    ${reset}
+		;                               \e[${f}7m▄█████████▄${reset}
+		;                               \e[${f}7m▀▀▀▀▀▀▀▀▀▀▀${reset}
 		" | cut -d ";" -f 2
 }
 
-oo(){
-	neofetch --w3m \
-		"$HOME/.local/share/icons/Alienware(C)-Logo.png" \
-		--size 30% --crop_mode normal --crop_offset center
+oo()
+{
+		neofetch --w3m \
+				"$HOME/.local/share/icons/Alienware(C)-Logo.png" \
+				--size 30% --crop_mode normal --crop_offset center
 }
 
-test-colors(){
-	x=`tput op`
-	y=`printf %76s`
-	for i in {0..256};
-	do
-		o=00$i
-		echo -e ${o:${#o}-3:3} `tput setaf $i;tput setab $i`${y// /=}$x
-	done
+test-colors()
+{
+		x=`tput op`
+		y=`printf %76s`
+		for i in {0..256};
+		do
+			o=00$i
+			echo -e ${o:${#o}-3:3} `tput setaf $i;tput setab $i`${y// /=}$x
+		done
 }
 
-td(){
-	if [[ -f ./TODO ]];
-	then
-		clear && cat TODO
-	else
-		vim TODO
-	fi
+td()
+{
+		if [[ -f ./TODO ]];
+		then
+				clear && cat TODO
+		else
+				vim TODO
+		fi
+}
+
+n()
+{
+		if [[ -f $HOME/NOTE ]];
+		then
+				clear && cat $HOME/NOTE
+		else
+				vim $HOME/NOTE
+		fi
 }
 

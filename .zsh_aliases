@@ -15,3 +15,4 @@ alias gpgqg='gpg --no-default-key --keyring paqman-keyring.kbx --recv-keys'
 alias make50='/usr/bin/make CC=clang CFLAGS="-ggdb3 -O0 -std=c99 -Wall -Werror" LDLIBS="-lcs50 -lm"'
 alias v='vim'
 
+alias commit='commit -S'
