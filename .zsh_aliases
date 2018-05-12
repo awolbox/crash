@@ -1,18 +1,18 @@
 #alias ls='ls --color=auto'
 alias lsa='ls -a'
-alias q='exit || quit'
-alias x='cmatrix -afbu 4 -C yellow'
-#alias pass='PASSWORD_STORE_ENABLE_EXTENSIONS=true pass'
-alias asciiwars='/usr/bin/telnet towel.blinkenlights.nl'
-alias mapsci='/usr/bin/telnet mapscii.me'
-alias rtrash='rm -r $HOME/.local/share/Trash/files/*'
-alias ltrash='ls -lah $HOME/.local/share/Trash/files'
-alias archwiki='w3m -no-cookies -graph https://wiki.archlinux.org/'
-alias gnu1='w3m http://download-mirror.savannah.gnu.org/releases'
-alias gnu0='w3m https://ftp.gnu.org/gnu/'
+alias q="echo '"
+alias p="echo \$("
+alias x='cmatrix -abu 4'
+alias vi='vim'
+#
 alias gpgqv='gpg --no-default-key --keyring paqman-keyring.kbx --verify'
 alias gpgqg='gpg --no-default-key --keyring paqman-keyring.kbx --recv-keys'
 alias make50='/usr/bin/make CC=clang CFLAGS="-ggdb3 -O0 -std=c99 -Wall -Werror" LDLIBS="-lcs50 -lm"'
-alias v='vim'
-
 alias commit='commit -S'
+#
+alias asciiwars='/usr/bin/telnet towel.blinkenlights.nl'
+alias mapsci='/usr/bin/telnet mapscii.me'
+alias archwiki='w3m -no-cookies -graph https://wiki.archlinux.org/'
+alias gnu0='w3m https://ftp.gnu.org/gnu/'
+alias gnu1='w3m http://download-mirror.savannah.gnu.org/releases'
+alias ls='cls'

@@ -18,19 +18,21 @@ Plugin 'dylanaraps/wal.vim'
 Plugin 'mhinz/vim-startify'
 
 call vundle#end()          
-filetype plugin indent on 
 
 """ General settings """
+
+filetype plugin indent on 
+set tabstop=4
+set shiftwidth=4
+set expandtab
 set shortmess=I
 "set spell
 syntax enable
-set tabstop=4
 set t_Co=256
-set relativenumber
 set number
-set background=dark
+set relativenumber
+"set background=dark
 map <C-n> :NERDTreeToggle<CR>
-
 let NERDTreeShowLineNumbers=1
 "autocmd vimenter * NERDTree
 

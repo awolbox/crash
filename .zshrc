@@ -10,12 +10,13 @@ if [ "$TERM" = "linux" ]; then
 	clear
 fi
 
-export PATH=$HOME/.bin:$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/bin
+export PATH=$HOME/.gem/ruby/2.5.0/bin/:$HOME/.bin:$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/bin
 export USER=$USER
 export HOME=$HOME
 export TERM='rxvt-unicode-256color'
 export EDITOR='vim'
 export BROWSER='waterfox'
+export TRASH=$HOME/.local/share/Trash/files
 export HISTFILE=$HOME/.zsh_history
 export PAGER='less -R'
 export QT_QPA_PLATFORMTHEME=qt5ct
@@ -24,6 +25,8 @@ export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 
 source ~/.zsh_functions
 source ~/.zsh_aliases
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
 
 set -o vi
 (cat ~/.cache/wal/sequences &)
