@@ -11,8 +11,8 @@ URxvt*background:   {background.alpha}
 Urxvt*depth:32
 URxvt*cursorColor:  {cursor}
 URxvt*borderColor:  {background.alpha}
-URxvt.font: xft:Hack:antialias=true:Bold:style:Italic:size=9
-URxvt.letterSpace: -1
+URxvt.font: xft:Hack:antialias=true:Mono:size=9
+URxvt.letterSpace: 0
 URxvt.resize-font.smaller: C-Prior
 URxvt.resize-font.bigger: C-Next
 URxvt*cursorBlink: true

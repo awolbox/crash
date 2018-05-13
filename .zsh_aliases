@@ -2,7 +2,7 @@
 alias lsa='ls -a'
 alias q="echo '"
 alias p="echo \$("
-alias x='cmatrix -abu 4'
+alias x='cmatrix -abu 4 -C blue'
 alias vi='vim'
 #
 alias gpgqv='gpg --no-default-key --keyring paqman-keyring.kbx --verify'

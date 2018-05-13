@@ -89,7 +89,13 @@ n()
 
 cls(){
     echo
-    colorls --dark --gs $@
+    colorls --light --gs $@
+    echo
+}
+
+rls(){
+    echo
+    ls $@
     echo
 }
 
