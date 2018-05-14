@@ -24,7 +24,7 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 
 [ ! -s ~/.config/mpd/pid ] && mpd
 
-urxvtd --quiet --opendisplay --fork &
+urxvtd --quiet --opendisplay --fork &      # st will be used instead
 xset -dpms &
 xset s off &
 xss-lock -- xscreensaver-command -lock &

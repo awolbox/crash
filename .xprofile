@@ -3,7 +3,7 @@
 # ~/.xprofile - awolbox
 
 [ ! -s ~/.config/mpd/pid ] && mpd
-urxvtd --quiet --opendisplay --fork &
+#urxvtd --quiet --opendisplay --fork &
 xset -dpms &
 xset s off &
 xss-lock -- xscreensaver-command -lock &
