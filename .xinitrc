@@ -27,8 +27,9 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 urxvtd --quiet --opendisplay --fork &      # st will be used instead
 xset -dpms &
 xset s off &
-xss-lock -- xscreensaver-command -lock &
-
+#xss-lock -- xscreensaver-command -lock &
+xss-lock -- xlock -username " " -password " " -message " " -info "Enter your
+password mortal..." +description -fg blue -bg black -echokeys -echokey "X" -delay 10000 -mode noof
 exec i3
 ~/.fehbg & 
 
