@@ -1,12 +1,12 @@
 # GNU/Linux Rice
-archlinux - bash - i3 + polybar\
+archlinux - zsh - i3 + polybar\
 nvidia graphics - pulseaudio sound server
 
 ## dependencies
 
  - official repos
 
-bash\
+zsh\
 rxvt-unicode\
 vim\
 tmux\
@@ -51,3 +51,5 @@ pulseaudio-ctl\
 alienfx (for alienware)\
 nerdfont-complete\
 urlview
+colorls-git
+

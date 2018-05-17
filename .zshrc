@@ -10,8 +10,8 @@ if [ "$TERM" = "linux" ]; then
 	clear
 fi
 
-#export PATH=$HOME/.gem/ruby/2.5.0/bin/:$HOME/.bin:$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/bin
-export PATH=$HOME/.bin:$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/bin
+export PATH=$HOME/.gem/ruby/2.5.0/bin/:$HOME/.bin:$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/bin
+#export PATH=$HOME/.bin:$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/bin
 export USER=$USER
 export HOME=$HOME
 export TERM='st-256color'
