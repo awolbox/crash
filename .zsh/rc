@@ -27,7 +27,7 @@ export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 source $HOME/.zsh/functions
 source $HOME/.zsh/aliases
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
+#source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
 
 set -o vi
 (cat ~/.cache/wal/sequences &)
